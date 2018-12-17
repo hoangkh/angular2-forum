@@ -6,20 +6,34 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MyActivityModule } from './my-activity/my-activity.module';
+import { ThreadModule } from './thread/thread.module';
+import { LoginModule } from './login/login.module';
+
+
 
 //components
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { RecentActivityComponent } from './recent-activity/recent-activity.component';
-import { FaqComponent } from './faq/faq.component';
 import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { MyActivityComponent } from './my-activity/my-activity.component';
 import { UserRegisterComponent } from './my-activity/user-register/user-register.component';
 import { UserEditComponent } from './my-activity/user-edit/user-edit.component';
 
+import { ThreadComponent } from './thread/thread.component';
+import { ThreadAddComponent } from './thread/thread-add/thread-add.component';
+import { ThreadGetComponent } from './thread/thread-get/thread-get.component';
+import { ThreadEditComponent } from './thread/thread-edit/thread-edit.component';
+import { ThreadDetailComponent } from './thread/thread-detail/thread-detail.component';
+
+import { LoginComponent } from './login/login.component';
+
+
 //services
 import { UserService } from './my-activity/user.service';
+import { ThreadService } from './thread/thread.service';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -27,11 +41,16 @@ import { UserService } from './my-activity/user.service';
     NavComponent,
     HomeComponent,
     RecentActivityComponent,
-    FaqComponent,
     GuidelinesComponent,
     MyActivityComponent,
     UserRegisterComponent,
-    UserEditComponent
+    UserEditComponent,
+    ThreadComponent,
+    ThreadAddComponent,
+    ThreadGetComponent,
+    ThreadEditComponent,
+    ThreadDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +58,7 @@ import { UserService } from './my-activity/user.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ UserService ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

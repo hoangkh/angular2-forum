@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Thread Title</label>
+          <input type="text" class="form-control" formControlName="thread_title" #thread_title />
+        </div>
+        <div *ngIf="angForm.controls['thread_title'].invalid && (angForm.controls['thread_title'].dirty || angForm.controls['thread_title'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['thread_title'].errors.required">
+            Thread Title is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Thread Category </label>
+          <input type="text" class="form-control" formControlName="thread_category" #thread_category />
+        </div>
+        <div *ngIf="angForm.controls['thread_category'].invalid && (angForm.controls['thread_category'].dirty || angForm.controls['thread_category'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['thread_category'].errors.required">
+            Thread Category is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Discussion</label>
+          <input type="textarea" class="form-control" formControlName="post_description" #post_description />
+        </div>
+        <div *ngIf="angForm.controls['post_description'].invalid && (angForm.controls['post_description'].dirty || angForm.controls['post_description'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['post_description'].errors.required">
+            Discussion is required!
+          </div>
+        </div>
+        <!-- <div class="form-group">
+          <input type="text" class="form-control" value="001" formControlName="post_id" #post_id/>
+          <input type="text" class="form-control" value="001" formControlName="user_id" #user_id />
+          <input type="text" class="form-control" value="1544746404" formControlName="post_created" #post_created />
+        </div> -->
+        <div class="form-group">
+          <button (click)="addThread(thread_title.value, thread_category.value, post_description.value, 001, 002, 1544746404)" 
+              [disabled]="angForm.pristine || angForm.invalid" 
+              class="btn btn-primary">
+              Create Thread
+           </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- , post_id.value, post_created.value, user_id.value -->

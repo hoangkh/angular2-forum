@@ -8,7 +8,9 @@ import { UserService } from '../user.service';
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.scss']
 })
+
 export class UserRegisterComponent implements OnInit {
+  
   angForm: FormGroup;
   constructor(private fb: FormBuilder, private us: UserService) {
     this.createForm();
