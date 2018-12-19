@@ -10,7 +10,7 @@
   </thead>
   <tbody [routerLink]="['/thread/view']">
     <tr *ngFor="let thread of threads">
-      <td><b>{{ thread.thread_title}}</b> in <b>{{ thread.thread_category }}</b></td>
+      <td><b>{{ thread.thread_title}}</b> in <b><a routerLink="/user/register">{{ thread.thread_category }}</a></b></td>
       <td>{{ thread.thread_posts['user_id'] }}</td>
       <td></td>
       <td></td>
