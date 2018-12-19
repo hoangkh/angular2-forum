@@ -8,7 +8,16 @@
   <div class="row">
       <h2>User name</h2>
   </div>
-  <div><i class="fas fa-cog"></i></div>
+  
+  <div class="dropdown" appDropdown>
+      <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-cog"></i>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" routerLink="/user/edit">Edit profile</a>
+        <a class="dropdown-item" href="#">Delete Profile</a>
+      </div>
+    </div>
   
   <div class="row">
     <div class="col-md-3">
@@ -25,7 +34,6 @@
   </div>
   <div class="row">
       <a routerLink="/thread/create"><button type="button" class="btn btn-primary" style="float: right;">New Thread</button></a>
-      <a routerLink="/user/edit"><button type="button" class="btn btn-primary" style="float: right;">Edit Profile</button></a>
   </div>
   <h3>Discussions</h3>
   <h3>Reactions</h3>

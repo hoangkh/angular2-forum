@@ -14,11 +14,16 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 //services
 import { UserService } from './user.service';
 
+//custom directives
+import { DropdownDirective } from '../shared/dropdown.directive';
+
+
 @NgModule({
   declarations: [
     MyActivityComponent,
     UserRegisterComponent,
-    UserEditComponent
+    UserEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

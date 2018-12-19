@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'thread/create', component: ThreadAddComponent },
   { path: 'thread/edit', component: ThreadEditComponent },
   { path: 'thread/view', component: ThreadDetailComponent },
+  { path: 'thread', component: ThreadComponent },  
   
   
 ];

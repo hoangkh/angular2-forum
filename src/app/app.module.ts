@@ -35,6 +35,9 @@ import { UserService } from './my-activity/user.service';
 import { ThreadService } from './thread/thread.service';
 import { LoginService } from './login/login.service';
 
+//custom directive
+import { DropdownDirective } from './shared/dropdown.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +53,8 @@ import { LoginService } from './login/login.service';
     ThreadGetComponent,
     ThreadEditComponent,
     ThreadDetailComponent,
-    LoginComponent
+    LoginComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

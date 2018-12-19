@@ -26,9 +26,9 @@
             <th scope="col" style="width: 30%;">LATEST POST</th>
           </tr>
         </thead>
-        <tbody [routerLink]="['/thread/view']">
-          <tr *ngFor="let thread of threads">
-            <td><b>{{ thread.thread_title}}</b> in <b>{{ thread.thread_category }}</b></td>
+        <tbody [routerLink]="['/thread/view']" *ngFor="let thread of threads">
+          <tr *ngIf="thread.thread_category == 'Movies'">
+            <td><b>{{ thread.thread_title}}</b> in <b><a [routerLink]="['/thread/']">{{ thread.thread_category }}</a></b></td>
             <td></td>
             <td></td>
             <td></td>
@@ -55,9 +55,9 @@
             <th scope="col" style="width: 30%;">LATEST POST</th>
           </tr>
         </thead>
-        <tbody [routerLink]="['/thread/view']">
-          <tr *ngFor="let thread of threads">
-            <td><b>{{ thread.thread_title}}</b> in <b>{{ thread.thread_category }}</b></td>
+        <tbody [routerLink]="['/thread/view']" *ngFor="let thread of threads">
+          <tr *ngIf="thread.thread_category == 'Games'">
+            <td><b>{{ thread.thread_title}}</b> in <b><a [routerLink]="['/thread/']">{{ thread.thread_category }}</a></b></td>
             <td></td>
             <td></td>
             <td></td>
@@ -71,7 +71,7 @@
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="forumCategory btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-          MUSIC
+         <a [routerLink]="'thread'">MUSIC</a> 
         </button>
       </h5>
     </div>
@@ -85,9 +85,9 @@
             <th scope="col" style="width: 30%;">LATEST POST</th>
           </tr>
         </thead>
-        <tbody [routerLink]="['/thread/view']">
-          <tr *ngFor="let thread of threads">
-            <td><b>{{ thread.thread_title}}</b> in <b>{{ thread.thread_category }}</b></td>
+        <tbody [routerLink]="['/thread/view']" *ngFor="let thread of threads">
+          <tr *ngIf="thread.thread_category == 'Music'">
+            <td><b>{{ thread.thread_title}}</b> in <b><a [routerLink]="['/thread/']">{{ thread.thread_category }}</a></b></td>
             <td></td>
             <td></td>
             <td></td>
@@ -115,9 +115,9 @@
             <th scope="col" style="width: 30%;">LATEST POST</th>
           </tr>
         </thead>
-        <tbody [routerLink]="['/thread/view']">
-          <tr *ngFor="let thread of threads">
-            <td><b>{{ thread.thread_title}}</b> in <b>{{ thread.thread_category }}</b></td>
+        <tbody [routerLink]="['/thread/view']" *ngFor="let thread of threads">
+          <tr *ngIf="thread.thread_category == 'Nerdy Stuff'">
+            <td><b>{{ thread.thread_title}}</b> in <b><a [routerLink]="['/thread/']">{{ thread.thread_category }}</a></b></td>
             <td></td>
             <td></td>
             <td></td>
@@ -145,9 +145,9 @@
             <th scope="col" style="width: 30%;">LATEST POST</th>
           </tr>
         </thead>
-        <tbody [routerLink]="['/thread/view']">
-          <tr *ngFor="let thread of threads">
-            <td><b>{{ thread.thread_title}}</b> in <b>{{ thread.thread_category }}</b></td>
+        <tbody [routerLink]="['/thread/view']" *ngFor="let thread of threads">
+          <tr *ngIf="thread.thread_category == 'Puns'">
+            <td><b>{{ thread.thread_title}}</b> in <b><a [routerLink]="['/thread/']">{{ thread.thread_category }}</a></b></td>
             <td></td>
             <td></td>
             <td></td>
