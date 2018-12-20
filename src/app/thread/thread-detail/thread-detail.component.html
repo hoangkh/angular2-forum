@@ -1,53 +1,26 @@
-<div class="container">
-  <h2>
-    <b>{{ thread_title }}</b>
-  </h2>
-  <div class="container threadDetail">
-    <div class="row headerEmpty">
-      <div class="col-xs-12"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <ul>
-          <li>{{ user_name }}</li>
-          <li>{{ post_created }}</li>
-          <li>{{ post_order }}</li>
-        </ul>
+<div *ngFor="let thread of threads">
+  <div class="container" *ngIf="thread._id == [threadId]">
+      <h2>
+          <b>{{ thread.thread_title }}</b>
+        </h2>
+    <div class="container threadDetail">
+      <div class="row headerEmpty">
+        <div class="col-xs-12"></div>
       </div>
-      <div class="col-md-9">Some thing in here</div>
-    </div>
-  </div>
-  <hr>
-  <div class="container threadDetail">
-    <div class="row headerEmpty">
-      <div class="col-xs-12"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <ul>
-          <li>{{ user_name }}</li>
-          <li>{{ post_created }}</li>
-          <li>{{ post_order }}</li>
-        </ul>
+      <div class="row">
+        <div class="col-md-3">
+          <ul>
+            <li>{{ thread.thread_posts['user_id'] }}</li>
+            <li>{{ thread.thread_posts['post_created'] }}</li>
+            <li>{{ post_order }}</li>
+          </ul>
+        </div>
+        <div class="col-md-9">{{ thread.thread_posts['post_description'] }}</div>
       </div>
-      <div class="col-md-9">Some thing in here</div>
     </div>
+    <hr>
   </div>
-  <hr>
-  <div class="container threadDetail">
-    <div class="row headerEmpty">
-      <div class="col-xs-12"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <ul>
-          <li>{{ user_name }}</li>
-          <li>{{ post_created }}</li>
-          <li>{{ post_order }}</li>
-        </ul>
-      </div>
-      <div class="col-md-9">Some thing in here</div>
-    </div>
-  </div>
-  <hr>
 </div>
+<app-thread-get (sendThreadId)="receiveThreadId($event)"></app-thread-get>
+
+

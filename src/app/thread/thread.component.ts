@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./thread.component.scss']
 })
 export class ThreadComponent implements OnInit {
-
+  threadId: string;
   constructor() { }
 
   ngOnInit() {
   }
-
+  receiveThreadId($event) {
+    this.threadId = $event;
+    console.log(this.threadId);
+  }
 }

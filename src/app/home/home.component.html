@@ -28,7 +28,7 @@
         </thead>
         <tbody [routerLink]="['/thread/view']" *ngFor="let thread of threads">
           <tr *ngIf="thread.thread_category == 'Movies'">
-            <td><b>{{ thread.thread_title}}</b> in <b><a [routerLink]="['/thread/']">{{ thread.thread_category }}</a></b></td>
+            <td><b>{{ thread.thread_title}}</b> in <b><a [routerLink]="['/thread']">{{ thread.thread_category }}</a></b></td>
             <td></td>
             <td></td>
             <td></td>

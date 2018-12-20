@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Thread } from '../Thread';
+import { ThreadService } from '../thread.service';
 
 @Component({
   selector: 'app-thread-detail',
@@ -7,12 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThreadDetailComponent implements OnInit {
   thread_title = "Thread Title";
-  user_name = "User name";
-  post_created = "Date-Time";
-  post_order = "#";
-  constructor() { }
+  
+  threads: Thread[];
+  constructor(private ts: ThreadService) { }
 
   ngOnInit() {
+    this.ts
+      .getThreads()
+      .subscribe((data: Thread[]) => {
+        this.threads = data;
+    });
+  }
+
+  threadId: string;
+  
+  receiveThreadId($event) {
+    this.threadId = $event;
+    console.log(this.threadId);
   }
 
 }

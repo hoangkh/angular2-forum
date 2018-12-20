@@ -30,13 +30,13 @@ threadRoutes.route('/').get(function (req, res) {
     }
   });
 });
-// Defined view route
-threadRoutes.route('/view/:id').get(function (req, res) {
-  let id = req.params.id;
-  Thread.findById(id, function (err, thread){
-      res.json(thread);
-  });
-});
+// // Defined view route
+// threadRoutes.route('/:id').get(function (req, res) {
+//   let id = req.params.id;
+//   Thread.findById(id, function (err, thread){
+//       res.json(thread);
+//   });
+// });
 
 // // Defined edit route
 // threadRoutes.route('/edit/:id').get(function (req, res) {

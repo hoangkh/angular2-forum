@@ -29,8 +29,6 @@ const routes: Routes = [
   { path: 'thread/edit', component: ThreadEditComponent },
   { path: 'thread/view', component: ThreadDetailComponent },
   { path: 'thread', component: ThreadComponent },  
-  
-  
 ];
 
 @NgModule({

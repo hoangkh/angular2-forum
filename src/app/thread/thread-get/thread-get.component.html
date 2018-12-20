@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody [routerLink]="['/thread/view']">
-    <tr *ngFor="let thread of threads">
+    <tr *ngFor="let thread of threads" (click)="getThreadId(thread._id)">
       <td><b>{{ thread.thread_title}}</b> in <b><a routerLink="/thread/">{{ thread.thread_category }}</a></b></td>
       <td>{{ thread.thread_posts['user_id'] }}</td>
       <td></td>

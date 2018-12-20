@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Thread } from '../Thread';
 import { ThreadService } from '../thread.service';
 
@@ -8,6 +8,8 @@ import { ThreadService } from '../thread.service';
   styleUrls: ['./thread-get.component.scss']
 })
 export class ThreadGetComponent implements OnInit {
+  threadId: string;
+  @Output() sendThreadId = new EventEmitter<string>();
   threads: Thread[];
   constructor(private ts: ThreadService) { }
 
@@ -17,6 +19,9 @@ export class ThreadGetComponent implements OnInit {
       .subscribe((data: Thread[]) => {
         this.threads = data;
     });
+  }
+  getThreadId(id: string){
+    this.sendThreadId.emit(id);
   }
 
 }
